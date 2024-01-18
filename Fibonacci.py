@@ -8,11 +8,24 @@ nums = list(range(0, num+1))
 
 print(nums)
 
-result = list()
+result = [0,]
 
-for i in nums:
-    new_num = i
-    result.append(new_num)
-    nums.remove(i-1)
+while True:
+
+    for i in range(len(nums)+1):
+
+        if i != nums[-1]:
+            new_num = nums[i] + nums[i+1]
+            
+            result.append(new_num)
+            
+            nums.remove(i)
+
+        else:
+            new_num = new_num + nums[i]
+
+            result.append(new_num)
+
+            nums.remove(i)
 
 print(result)
